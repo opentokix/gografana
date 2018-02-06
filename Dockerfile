@@ -5,7 +5,7 @@ EXPOSE 3000
 COPY pkg/*.deb /tmp/
 RUN apt-get update 
 RUN apt-get -y upgrade 
-RUN apt-get -y install memcached libfontconfig
+RUN apt-get -y install memcached libfontconfig libcairo2
 RUN ls -l /tmp/
 RUN for i in $(ls /tmp/*.deb); do dpkg -i $i; done
 RUN apt-get -y -f install 
