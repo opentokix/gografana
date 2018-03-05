@@ -4,7 +4,7 @@ This is a container with a full graphite/grafana stack. It runs go-carbon, and c
 
 Issue this command to pull the latest version of the container:
 
-    docker pull opentokix/gografana:latest
+    docker pull opentokix/metrics:latest
 
 
 ### Login to grafana
@@ -16,11 +16,11 @@ Issue this command to pull the latest version of the container:
 
 This will get your metrics stack running, and accessible on these ports, however your data will be lost if you kill the container. **Warning**
 
-    docker run -p 2003:2003 -p 3000:3000 -d opentokix/gografana:latest
+    docker run -p 2003:2003 -p 3000:3000 -d opentokix/metrics:latest
 
 This is a more useful command, and will let you save your data in /srv/metrics and some subfolders in the host machine.
 
-    docker run -d -v /srv/metrics:/data -p 2003:2003 -p 3000:3000 opentokix/gografana:latest
+    docker run -d -v /srv/metrics:/data -p 2003:2003 -p 3000:3000 opentokix/metrics:latest
 
 To install plugins, enter the container with: docker exec -it containerID /bin/bash
 then execute:
