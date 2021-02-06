@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:buster
 WORKDIR /data
 EXPOSE 2003
 EXPOSE 3000
