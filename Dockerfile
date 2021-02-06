@@ -10,7 +10,7 @@ RUN ls -l /tmp/
 RUN for i in $(ls /tmp/*.deb); do dpkg -i $i; done
 RUN apt-get -y -f install 
 RUN rm -f /tmp/*.deb
-RUN mkdir /etc/carbonapi
+#RUN mkdir /etc/carbonapi
 COPY configs/carbonapi.yaml /etc/carbonapi/
 COPY configs/go-carbon.conf /etc/go-carbon/
 COPY configs/storage-aggregation.conf /etc/go-carbon/
